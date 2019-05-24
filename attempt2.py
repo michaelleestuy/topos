@@ -16,12 +16,12 @@ if 'population_total' in infobox:
 else:
     print('not found')
 '''
-cities = ['New York City', 'Los Angeles', 'Chicago', 'Seattle', 'Newark, New Jersey']
+cities = ['https://en.wikipedia.org/wiki/Los_Angeles']
 
 pages = []
 
 for i in cities:
-    pages.append(wptools.page(i))
+    pages.append(wptools.page(wiki=i))
 
 for i in pages:
     i.get_parse()
