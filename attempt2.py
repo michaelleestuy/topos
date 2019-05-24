@@ -1,18 +1,18 @@
 import wptools
 
 
-'''
-so = wptools.page('Los Angeles')
+
+so = wptools.page('Atlanta')
 so.get_parse()
 infobox = so.data['infobox']
 
 #print(infobox)
 
-
+print(infobox.keys())
 #use population_total
 
 if 'population_total' in infobox:
-    print('Population: ', infobox['population_total'])
+    print('Population: ', infobox['nickname'])
 else:
     print('not found')
 '''
@@ -31,4 +31,4 @@ pops = {}
 for i in range(len(cities)):
     pops[cities[i]] = pages[i].data['infobox']['population_total']
 
-print(pops)
+print(pops)'''
