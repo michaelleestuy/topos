@@ -24,6 +24,14 @@ my_table = html.find('table', {'class':'wikitable sortable'})
 
 new_table = pd.DataFrame(columns=range(0,12), index=range(0, entries+1))
 
+#link_rows = my_table.find_all('tr')[:entries+1]
+
+#link_cell = link_rows[1].find_all('td')[1]
+
+#print(link_cell.find('a', href=True).get('href'))
+
+
+
 row_marker = 0
 for row in my_table.find_all('tr')[:entries+1]:
     column_marker = 0
@@ -51,4 +59,7 @@ for i in range(1, entries+1):
 clean_table.iat[0,0] = 'Cities'
 clean_table.iat[0,1] = 'Population(2018)'
 clean_table.iat[0,2] = 'Population(2010)'
+
+
+
 print(clean_table)
