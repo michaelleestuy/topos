@@ -88,4 +88,4 @@ MyScraper.scrape_page(end, fields):
 
 - With a few tweaks, `MyScraper.main_scraper()` can be used to collect data from any branching Wikipedia table. 
 
-#### Bugs and Issues
+
