@@ -119,10 +119,13 @@ def main_scraper(fields, size, outf):
 
         for j in range(len(fields)):
             if final_table.iat[i + 1, j] == 'Not Found':
-                final_table.iat[i + 1, j] = output_data.iat[j, 0]
+                c = output_data.iat[j, 0]
+                if type(c) == type('') and '[' in c:
+                    c = c[:c.find('[')] + c[c.find(']') + 1:]
+                final_table.iat[i + 1, j] = c
 
     final_table.to_csv(path_or_buf=outf, index=False, header=False)
+    print('Done!')
     return
 
-
-#main_scraper(['City', 'Population (2018)', 'State', 'Mayor', 'Named for', 'Body'], 5, 'output123.csv')
+# main_scraper(['City', 'Population (2018)', 'State', 'Mayor', 'Named for', 'Body'], 5, 'output123.csv')
