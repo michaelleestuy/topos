@@ -157,3 +157,5 @@ def main_scraper(fields, size, outf):
     final_table.to_csv(path_or_buf=outf, index=False, header=False)  # convert to csv
     print('Done!')
     return
+
+###
