@@ -1,17 +1,17 @@
-#Wikipedia Scraper for Topos 2019
+# Wikipedia Scraper for Topos 2019
 
-######Michael Lee
-######Data Engineering Internship Assignment
+###### Michael Lee
+###### Data Engineering Internship Assignment
 
 The goal of this project was to capture and clean data about some of the largest cities in the United States from unconventional datasets, such as Wikipedia. To do so, this Python3 takes in html and converts it to a CSV for the data we want. The main source of data is [this Wikipedia page](https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population), which also provides links to individual city pages where more data can be scraped.
 
-###Prerequisites
+### Prerequisites
 
 - pandas
 - urllib3
 - bs4
 
-###Usage
+### Usage
 
 The main function:
 ```
@@ -24,7 +24,7 @@ MyScraper.main_scraper(fields, size, outf):
     """
 ```
 
-####Optimized Fields
+#### Optimized Fields
 
 This data is gathered directly from [the main list of cities](https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population), and thusly, is guaranteed to be consistent amongst all of the cities.
 
@@ -38,7 +38,7 @@ This data is gathered directly from [the main list of cities](https://en.wikiped
 - `'2016 Population Density (/sq mi)'` and `'2016 Population Density (/km2)'`'
 - `'Location'`: Longitude and Latitude data
 
-####Other Fields
+#### Other Fields
 
 Other data may still be gathered using `MyScraper.main_scraper()`, but the consistency of that data may vary depending on its availability on individual city Wikipedia pages. (ex. not all cities have a date of settlement, or a listed City Attorney.) Any data listed on the infobox of a city's Wikipedia page can be collected by the scraper. If a city is missing a datapoint for a certain field, it will be left blank on the CSV. Examples of some additional fields:
 
@@ -47,11 +47,11 @@ Other data may still be gathered using `MyScraper.main_scraper()`, but the consi
 - `'Time zone'`
 - `'Website'`: official city website
 
-####Size
+#### Size
 
 The number of cities we want data for; the scraper will collect data on this number of cities, going from largest to smallest from [the main list of cities](https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population).
 
-####Sample Code
+#### Sample Code
 
 This code can be found in `RunScraper.py`:
 
@@ -74,7 +74,7 @@ Chicago, United States, Illinois,2705994,2695598,227.3 sq mi,Mayor–council
 ... (followed by 197 more lines)
 ```
 
-####Other Uses/Future Improvements
+#### Other Uses/Future Improvements
 
 ```buildoutcfg
 MyScraper.scrape_page(end, fields):
@@ -88,4 +88,4 @@ MyScraper.scrape_page(end, fields):
 
 - With a few tweaks, `MyScraper.main_scraper()` can be used to collect data from any branching Wikipedia table. 
 
-####Bugs and Issues
+#### Bugs and Issues
